@@ -1,0 +1,1013 @@
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20221026140612)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "year" integer, "genre" varchar, "synopsis" text, "director" varchar, "allocine_rating" float, "my_rating" integer, "already_seen" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221026140612"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 14:08:45.373671"], ["updated_at", "2022-10-26 14:08:45.373671"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beowulf"], ["year", 1999], ["genre", "fantastique, action, epouvante-horreur"], ["synopsis", "La terre a traverse...blabla."], ["director", "Graham Baker"], ["allocine_rating", 2.0], ["my_rating", 2], ["already_seen", 1], ["created_at", "2022-10-26 14:23:40.607785"], ["updated_at", "2022-10-26 14:23:40.607785"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "L'exorciste"], ["year", 1974], ["genre", "epouvante-horreur"], ["synopsis", "L'actrice Chris McNeil est inquiète...blabla"], ["director", "William Friedkin"], ["allocine_rating", 3.3], ["my_rating", 3], ["already_seen", 1], ["created_at", "2022-10-26 14:30:05.880970"], ["updated_at", "2022-10-26 14:30:05.880970"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "OSS 117, LE CAIRE NID D'ESPIONS"], ["year", 2006], ["genre", "comédie, action, espionnage"], ["synopsis", "Égypte, 1955, le Caire est un véritable"], ["director", "Michel Haza"], ["allocine_rating", 3.9], ["my_rating", 2], ["already_seen", 1], ["created_at", "2022-10-26 14:39:47.719963"], ["updated_at", "2022-10-26 14:39:47.719963"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.6ms)[0m  [1m[33mUPDATE "movies" SET "allocine_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["allocine_rating", 1.3], ["updated_at", "2022-10-26 14:46:52.381159"], ["id", 1]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.9ms)[0m  [1m[33mUPDATE "movies" SET "genre" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["genre", "comédie"], ["updated_at", "2022-10-26 14:49:10.696812"], ["id", 2]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."already_seen" = ?[0m  [["already_seen", 1]]
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."already_seen" = ? AND "movies"."id" = ? LIMIT ?[0m  [["already_seen", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ines Gleichner"], ["year", 2004], ["genre", "comédie"], ["synopsis", "Velit dicta ad aut incidunt adipisci cumque recusandae molestias est."], ["director", "Heriberto Herman"], ["allocine_rating", 1.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.570159"], ["updated_at", "2022-10-26 15:27:43.570159"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Florentino Bauch"], ["year", 1987], ["genre", "action"], ["synopsis", "Eos quia rem et cum perferendis sit voluptatem quibusdam voluptatibus."], ["director", "Lanell Ortiz"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.580900"], ["updated_at", "2022-10-26 15:27:43.580900"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Isidra Bednar"], ["year", 2012], ["genre", "drame"], ["synopsis", "Doloribus molestiae aut eum asperiores voluptas consequatur nobis voluptatem qui."], ["director", "Alix Legros"], ["allocine_rating", 0.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.589755"], ["updated_at", "2022-10-26 15:27:43.589755"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Keven Tremblay"], ["year", 1962], ["genre", "action"], ["synopsis", "Earum minima perferendis vel ut aperiam inventore rerum ullam iste."], ["director", "Yael Maggio JD"], ["allocine_rating", 4.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.600645"], ["updated_at", "2022-10-26 15:27:43.600645"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Msgr. Al O'Connell"], ["year", 2009], ["genre", "action"], ["synopsis", "Quia magni in pariatur qui assumenda est deleniti maiores rem."], ["director", "Fr. Seth Homenick"], ["allocine_rating", 4.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.608597"], ["updated_at", "2022-10-26 15:27:43.608597"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hollis Thompson"], ["year", 2020], ["genre", "horreur"], ["synopsis", "Nesciunt qui iusto eos vero sit necessitatibus quidem est aliquam."], ["director", "Antone Nikolaus"], ["allocine_rating", 2.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.617382"], ["updated_at", "2022-10-26 15:27:43.617382"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Velvet Hauck"], ["year", 1919], ["genre", "action"], ["synopsis", "Molestiae tenetur debitis est enim illum laboriosam officia porro sint."], ["director", "Emilio Tremblay"], ["allocine_rating", 0.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.625956"], ["updated_at", "2022-10-26 15:27:43.625956"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Julio Jones"], ["year", 2020], ["genre", "horreur"], ["synopsis", "Et quam et veniam iste cum est dolor et aspernatur."], ["director", "Donovan Rodriguez"], ["allocine_rating", 0.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.634165"], ["updated_at", "2022-10-26 15:27:43.634165"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.9ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Scottie Sawayn"], ["year", 1968], ["genre", "drame"], ["synopsis", "Et et laudantium quod vero assumenda numquam aliquam voluptatem dicta."], ["director", "Darrell Carroll"], ["allocine_rating", 3.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.642452"], ["updated_at", "2022-10-26 15:27:43.642452"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harlan Hintz"], ["year", 1971], ["genre", "drame"], ["synopsis", "Nobis quas est et voluptates nihil neque aut commodi quod."], ["director", "Rob Haag"], ["allocine_rating", 2.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.650778"], ["updated_at", "2022-10-26 15:27:43.650778"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abe Bayer"], ["year", 1924], ["genre", "comédie"], ["synopsis", "Deleniti dolor pariatur vero explicabo voluptatem nesciunt omnis in debitis."], ["director", "Renato Feil"], ["allocine_rating", 2.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.659104"], ["updated_at", "2022-10-26 15:27:43.659104"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gov. Chanel McCullough"], ["year", 2020], ["genre", "action"], ["synopsis", "Amet distinctio vel laudantium voluptatem beatae ut sunt magnam et."], ["director", "Billie Stoltenberg"], ["allocine_rating", 0.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.667762"], ["updated_at", "2022-10-26 15:27:43.667762"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arden Kunze"], ["year", 2020], ["genre", "comédie"], ["synopsis", "Iusto sit eos at hic consequatur cupiditate voluptatum mollitia tenetur."], ["director", "Fabian Rice"], ["allocine_rating", 1.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.677632"], ["updated_at", "2022-10-26 15:27:43.677632"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Howard Borer"], ["year", 2007], ["genre", "comédie"], ["synopsis", "Autem quo sapiente aut tempore velit non officiis natus esse."], ["director", "Marcelene Hintz Sr."], ["allocine_rating", 1.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.685759"], ["updated_at", "2022-10-26 15:27:43.685759"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Piedad Labadie"], ["year", 1965], ["genre", "drame"], ["synopsis", "Dolorem culpa dolores optio est eos qui qui mollitia laboriosam."], ["director", "Fr. Lynn Smith"], ["allocine_rating", 1.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.693710"], ["updated_at", "2022-10-26 15:27:43.693710"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Meghan Carter"], ["year", 1967], ["genre", "horreur"], ["synopsis", "Reiciendis dolorem ad ut officia molestiae itaque unde aliquam laudantium."], ["director", "Charles Witting Esq."], ["allocine_rating", 0.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.701773"], ["updated_at", "2022-10-26 15:27:43.701773"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Danilo Klein"], ["year", 2001], ["genre", "horreur"], ["synopsis", "In quia esse libero consequatur ipsa asperiores nulla corporis fugiat."], ["director", "Mr. Rusty Wolff"], ["allocine_rating", 4.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.712003"], ["updated_at", "2022-10-26 15:27:43.712003"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bryant Borer"], ["year", 1951], ["genre", "horreur"], ["synopsis", "Aut adipisci impedit est tenetur ea sint autem ab in."], ["director", "Marlen Jacobs"], ["allocine_rating", 0.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.720250"], ["updated_at", "2022-10-26 15:27:43.720250"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "September Predovic"], ["year", 1982], ["genre", "action"], ["synopsis", "Esse ut consequatur cum non dolorem eveniet possimus autem mollitia."], ["director", "Mikel Graham"], ["allocine_rating", 2.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.739171"], ["updated_at", "2022-10-26 15:27:43.739171"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Veda Hyatt JD"], ["year", 1967], ["genre", "action"], ["synopsis", "Repellendus tempore quas voluptatum atque accusamus qui accusantium in labore."], ["director", "Salvatore Schmeler"], ["allocine_rating", 4.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.746502"], ["updated_at", "2022-10-26 15:27:43.746502"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sen. Margaret Cassin"], ["year", 1958], ["genre", "action"], ["synopsis", "Necessitatibus dicta incidunt eum suscipit ipsa qui occaecati sapiente nihil."], ["director", "Gov. Karrie VonRueden"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.753827"], ["updated_at", "2022-10-26 15:27:43.753827"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alaine Ondricka"], ["year", 1968], ["genre", "action"], ["synopsis", "Voluptatibus ut similique ut aperiam ducimus aut autem fuga ut."], ["director", "Rev. Santo Veum"], ["allocine_rating", 2.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.761431"], ["updated_at", "2022-10-26 15:27:43.761431"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fr. Trevor Breitenberg"], ["year", 1970], ["genre", "action"], ["synopsis", "Quod doloribus fuga rem temporibus facere impedit odio officiis voluptates."], ["director", "Kandice Cormier"], ["allocine_rating", 4.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.769273"], ["updated_at", "2022-10-26 15:27:43.769273"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mckinley Altenwerth DC"], ["year", 1944], ["genre", "action"], ["synopsis", "Veritatis qui in sit voluptate sit error voluptatem doloremque sed."], ["director", "Casey Williamson"], ["allocine_rating", 2.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.776623"], ["updated_at", "2022-10-26 15:27:43.776623"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Toshia Wiegand"], ["year", 1934], ["genre", "comédie"], ["synopsis", "Dolorem voluptas minima assumenda voluptatem rerum occaecati eum ut culpa."], ["director", "Buddy Purdy"], ["allocine_rating", 0.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.784171"], ["updated_at", "2022-10-26 15:27:43.784171"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Maynard Olson"], ["year", 2014], ["genre", "comédie"], ["synopsis", "Dolorem quod aliquam sunt iusto voluptatum consequatur unde ipsum vero."], ["director", "Kris Nikolaus"], ["allocine_rating", 2.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.791665"], ["updated_at", "2022-10-26 15:27:43.791665"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Byron Corkery"], ["year", 1934], ["genre", "comédie"], ["synopsis", "Quia nihil occaecati nulla est et asperiores aut ex dolor."], ["director", "Pres. Alyssa Bednar"], ["allocine_rating", 2.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.798784"], ["updated_at", "2022-10-26 15:27:43.798784"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Norbert Ruecker"], ["year", 1999], ["genre", "drame"], ["synopsis", "Nihil est voluptas quidem sapiente et totam deserunt amet praesentium."], ["director", "Arielle Klein"], ["allocine_rating", 1.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.806112"], ["updated_at", "2022-10-26 15:27:43.806112"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lynn Wolff"], ["year", 1905], ["genre", "comédie"], ["synopsis", "Vel et non temporibus quas esse sint et at quia."], ["director", "Tai Senger"], ["allocine_rating", 0.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.812789"], ["updated_at", "2022-10-26 15:27:43.812789"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fr. Norman Ziemann"], ["year", 1940], ["genre", "horreur"], ["synopsis", "Suscipit eum at est incidunt aspernatur facere et ut nam."], ["director", "Caron Hettinger JD"], ["allocine_rating", 1.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.819730"], ["updated_at", "2022-10-26 15:27:43.819730"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Maximo Auer LLD"], ["year", 1988], ["genre", "action"], ["synopsis", "Quia culpa perferendis commodi eum error optio et blanditiis laboriosam."], ["director", "Gov. Anja Dietrich"], ["allocine_rating", 0.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.826624"], ["updated_at", "2022-10-26 15:27:43.826624"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lazaro Jenkins JD"], ["year", 1906], ["genre", "horreur"], ["synopsis", "Quos dicta necessitatibus facere doloribus reprehenderit deserunt consequatur omnis porro."], ["director", "Beata Nicolas"], ["allocine_rating", 2.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.833967"], ["updated_at", "2022-10-26 15:27:43.833967"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Thomasena Altenwerth"], ["year", 1931], ["genre", "drame"], ["synopsis", "Temporibus fugiat rerum vel consectetur quia sunt et ut laborum."], ["director", "Elida Murphy III"], ["allocine_rating", 4.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.840645"], ["updated_at", "2022-10-26 15:27:43.840645"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Junior DuBuque"], ["year", 1980], ["genre", "drame"], ["synopsis", "Illo labore sed dolorum similique enim dicta consectetur aut est."], ["director", "Clair Emard Sr."], ["allocine_rating", 4.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.847634"], ["updated_at", "2022-10-26 15:27:43.847634"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cristobal Moore"], ["year", 1930], ["genre", "drame"], ["synopsis", "Enim voluptas ut dignissimos doloremque unde quo expedita fuga similique."], ["director", "Cris Parisian"], ["allocine_rating", 2.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.854375"], ["updated_at", "2022-10-26 15:27:43.854375"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Enrique Wunsch"], ["year", 1925], ["genre", "action"], ["synopsis", "Praesentium fuga adipisci optio recusandae magnam nulla odio officia ut."], ["director", "Zina Padberg"], ["allocine_rating", 4.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.860994"], ["updated_at", "2022-10-26 15:27:43.860994"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Elden Leffler"], ["year", 1902], ["genre", "action"], ["synopsis", "Voluptatem omnis et labore aut ea commodi amet in neque."], ["director", "Eusebio Reichel"], ["allocine_rating", 1.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.868164"], ["updated_at", "2022-10-26 15:27:43.868164"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ethan Littel"], ["year", 2020], ["genre", "horreur"], ["synopsis", "Molestias ipsum placeat qui omnis in deserunt ducimus et iure."], ["director", "Marinda Daugherty"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.877063"], ["updated_at", "2022-10-26 15:27:43.877063"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tamekia Predovic DO"], ["year", 1933], ["genre", "drame"], ["synopsis", "Reprehenderit voluptas molestiae suscipit ut cumque sed consequatur rerum amet."], ["director", "Lance Durgan V"], ["allocine_rating", 2.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.884321"], ["updated_at", "2022-10-26 15:27:43.884321"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Loris Macejkovic Jr."], ["year", 1901], ["genre", "drame"], ["synopsis", "Adipisci non amet nemo deserunt consequuntur doloremque esse aut asperiores."], ["director", "An Padberg"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.892404"], ["updated_at", "2022-10-26 15:27:43.892404"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gustavo Ryan"], ["year", 2014], ["genre", "action"], ["synopsis", "Iure autem qui quis molestiae explicabo ab voluptatibus unde illo."], ["director", "Granville Little"], ["allocine_rating", 3.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.899549"], ["updated_at", "2022-10-26 15:27:43.899549"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Julietta Carroll"], ["year", 1982], ["genre", "action"], ["synopsis", "Harum ut consequatur et repellat velit aliquam quibusdam ratione qui."], ["director", "Rep. Kati Schimmel"], ["allocine_rating", 2.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.906078"], ["updated_at", "2022-10-26 15:27:43.906078"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gus Yundt"], ["year", 1915], ["genre", "drame"], ["synopsis", "Sunt consequuntur qui vero velit at ut voluptatem dolor consequatur."], ["director", "Zackary O'Kon"], ["allocine_rating", 4.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.912665"], ["updated_at", "2022-10-26 15:27:43.912665"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shelton Luettgen"], ["year", 1950], ["genre", "drame"], ["synopsis", "Ducimus deleniti quas sit quia accusamus aut vero esse voluptatum."], ["director", "Kassandra Flatley"], ["allocine_rating", 2.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.919605"], ["updated_at", "2022-10-26 15:27:43.919605"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Keren Block JD"], ["year", 1956], ["genre", "action"], ["synopsis", "Cumque quos omnis sint sed autem explicabo soluta magnam et."], ["director", "Agnes Hand"], ["allocine_rating", 1.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.926282"], ["updated_at", "2022-10-26 15:27:43.926282"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Awilda Romaguera"], ["year", 1922], ["genre", "action"], ["synopsis", "Ut porro maxime enim consequuntur velit laboriosam quia consequatur omnis."], ["director", "Kimbra Kling"], ["allocine_rating", 1.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.932972"], ["updated_at", "2022-10-26 15:27:43.932972"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Luisa Okuneva"], ["year", 1967], ["genre", "comédie"], ["synopsis", "Aperiam quas atque ut saepe voluptates voluptatem sed omnis consequuntur."], ["director", "Freddie Kuvalis DVM"], ["allocine_rating", 0.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.939442"], ["updated_at", "2022-10-26 15:27:43.939442"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Annemarie Pacocha"], ["year", 1992], ["genre", "action"], ["synopsis", "Velit aut natus consequatur qui sunt quibusdam qui id facere."], ["director", "Ms. Tori Bartell"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.946606"], ["updated_at", "2022-10-26 15:27:43.946606"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Phillis Paucek"], ["year", 2013], ["genre", "action"], ["synopsis", "Blanditiis sit voluptatem magni rerum totam omnis vel earum explicabo."], ["director", "Clemmie Walker"], ["allocine_rating", 3.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.953919"], ["updated_at", "2022-10-26 15:27:43.953919"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brian Okuneva"], ["year", 1984], ["genre", "horreur"], ["synopsis", "Tenetur facere omnis eveniet et libero dolor dignissimos animi pariatur."], ["director", "Marisa Moore"], ["allocine_rating", 3.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.960639"], ["updated_at", "2022-10-26 15:27:43.960639"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Estella Will"], ["year", 1940], ["genre", "horreur"], ["synopsis", "Et sequi autem quis minima voluptas laboriosam dolor molestias deserunt."], ["director", "Sean Kutch"], ["allocine_rating", 2.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.967605"], ["updated_at", "2022-10-26 15:27:43.967605"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bernie Lubowitz"], ["year", 1970], ["genre", "comédie"], ["synopsis", "Odit inventore et voluptatum corrupti suscipit reprehenderit dolorem sunt eius."], ["director", "Coral Davis III"], ["allocine_rating", 1.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.975085"], ["updated_at", "2022-10-26 15:27:43.975085"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Librada Cartwright"], ["year", 1972], ["genre", "horreur"], ["synopsis", "Autem odit sunt modi architecto maxime placeat omnis tempore sit."], ["director", "Theo Crist"], ["allocine_rating", 3.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.982021"], ["updated_at", "2022-10-26 15:27:43.982021"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Chi Heathcote"], ["year", 1938], ["genre", "comédie"], ["synopsis", "Illum aut autem nostrum fugit at omnis est ut ipsam."], ["director", "Norma Kihn LLD"], ["allocine_rating", 0.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.989448"], ["updated_at", "2022-10-26 15:27:43.989448"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aaron McClure"], ["year", 1983], ["genre", "horreur"], ["synopsis", "Eum fugiat fuga quibusdam ullam atque eum inventore ut et."], ["director", "Olin White"], ["allocine_rating", 1.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:43.996873"], ["updated_at", "2022-10-26 15:27:43.996873"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Luciano Schroeder"], ["year", 1919], ["genre", "action"], ["synopsis", "Dolore ipsa omnis distinctio autem numquam porro non incidunt eos."], ["director", "Yolanda Jacobi"], ["allocine_rating", 0.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.004219"], ["updated_at", "2022-10-26 15:27:44.004219"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hans Moen"], ["year", 1985], ["genre", "horreur"], ["synopsis", "Sint autem praesentium dolores aperiam illum quis quis aliquid est."], ["director", "Mr. Kareen Funk"], ["allocine_rating", 3.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.011409"], ["updated_at", "2022-10-26 15:27:44.011409"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Karleen Schroeder"], ["year", 1998], ["genre", "horreur"], ["synopsis", "Ipsam natus eum sit molestias iure tempora quaerat et porro."], ["director", "Ms. Idalia Larkin"], ["allocine_rating", 2.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.018834"], ["updated_at", "2022-10-26 15:27:44.018834"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sheldon Fritsch"], ["year", 1974], ["genre", "drame"], ["synopsis", "Quia est enim magnam quo qui repellat ab quis eos."], ["director", "Alessandra Trantow"], ["allocine_rating", 4.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.026294"], ["updated_at", "2022-10-26 15:27:44.026294"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Prof. Wendolyn Murphy"], ["year", 1962], ["genre", "comédie"], ["synopsis", "Officiis tempore pariatur molestiae dolor nihil harum autem iure ut."], ["director", "Alonso Smith PhD"], ["allocine_rating", 3.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.034012"], ["updated_at", "2022-10-26 15:27:44.034012"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rupert Langworth"], ["year", 1904], ["genre", "comédie"], ["synopsis", "Temporibus at suscipit esse quisquam dolores pariatur odio aut itaque."], ["director", "Wilfred Monahan"], ["allocine_rating", 1.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.041539"], ["updated_at", "2022-10-26 15:27:44.041539"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bennie Abbott I"], ["year", 1902], ["genre", "comédie"], ["synopsis", "Quia eum corporis odit dicta voluptate doloremque placeat saepe laborum."], ["director", "Alvaro Bernier V"], ["allocine_rating", 2.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.049014"], ["updated_at", "2022-10-26 15:27:44.049014"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alesha Keebler"], ["year", 1978], ["genre", "horreur"], ["synopsis", "Eius quo ut aut tempore tenetur eum nam est et."], ["director", "Milissa Kohler"], ["allocine_rating", 4.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.056545"], ["updated_at", "2022-10-26 15:27:44.056545"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dallas MacGyver"], ["year", 1988], ["genre", "horreur"], ["synopsis", "Quasi quo reprehenderit ducimus dolores et nesciunt unde optio voluptate."], ["director", "Melissia Schaden Esq."], ["allocine_rating", 1.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.064794"], ["updated_at", "2022-10-26 15:27:44.064794"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jude Mann DC"], ["year", 1982], ["genre", "drame"], ["synopsis", "Sit et labore quae sint ipsam atque consequatur officia pariatur."], ["director", "Tennie Windler"], ["allocine_rating", 2.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.072419"], ["updated_at", "2022-10-26 15:27:44.072419"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gov. Michal Dibbert"], ["year", 2008], ["genre", "comédie"], ["synopsis", "Nihil esse iste necessitatibus est non beatae mollitia optio delectus."], ["director", "Bart Conn"], ["allocine_rating", 2.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.080289"], ["updated_at", "2022-10-26 15:27:44.080289"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brittaney Wilkinson"], ["year", 1943], ["genre", "comédie"], ["synopsis", "Nesciunt tempore voluptates aut corporis hic similique ut quo repellat."], ["director", "Woodrow Walter"], ["allocine_rating", 2.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.088599"], ["updated_at", "2022-10-26 15:27:44.088599"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Moriah Crist"], ["year", 1902], ["genre", "comédie"], ["synopsis", "Cupiditate odit natus accusantium aut quae repellat autem asperiores voluptas."], ["director", "Tommie Skiles"], ["allocine_rating", 3.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.096563"], ["updated_at", "2022-10-26 15:27:44.096563"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tressie Gibson"], ["year", 1901], ["genre", "horreur"], ["synopsis", "Labore quibusdam debitis ut aut adipisci dolorum magni quos asperiores."], ["director", "Boris Hessel"], ["allocine_rating", 1.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.104313"], ["updated_at", "2022-10-26 15:27:44.104313"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jules Fadel I"], ["year", 1967], ["genre", "drame"], ["synopsis", "Iste quo et reiciendis aspernatur earum sint dolores ipsam quidem."], ["director", "Ms. Jasmine Kuvalis"], ["allocine_rating", 0.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.112169"], ["updated_at", "2022-10-26 15:27:44.112169"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jospeh Mante"], ["year", 1967], ["genre", "comédie"], ["synopsis", "Sed et qui accusantium commodi autem sint voluptas voluptate ab."], ["director", "Miss Edison Lubowitz"], ["allocine_rating", 2.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.119898"], ["updated_at", "2022-10-26 15:27:44.119898"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Edda Pfeffer"], ["year", 1908], ["genre", "horreur"], ["synopsis", "Asperiores deleniti debitis numquam earum voluptas sint sapiente incidunt ab."], ["director", "Pres. Jeanmarie Block"], ["allocine_rating", 4.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.127495"], ["updated_at", "2022-10-26 15:27:44.127495"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Buster Ward"], ["year", 1984], ["genre", "horreur"], ["synopsis", "Aperiam sint nostrum quam voluptas ut illum occaecati accusantium dolorem."], ["director", "Rudy Smith"], ["allocine_rating", 1.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.135266"], ["updated_at", "2022-10-26 15:27:44.135266"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shera Jacobi I"], ["year", 1926], ["genre", "drame"], ["synopsis", "Consequatur aspernatur et reiciendis nihil totam architecto voluptatem deserunt aut."], ["director", "Vito Wisozk I"], ["allocine_rating", 2.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.142894"], ["updated_at", "2022-10-26 15:27:44.142894"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rick Moore V"], ["year", 2010], ["genre", "drame"], ["synopsis", "Aut harum ipsam debitis reprehenderit nulla magnam aut aperiam sapiente."], ["director", "Ismael Kozey"], ["allocine_rating", 4.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.150956"], ["updated_at", "2022-10-26 15:27:44.150956"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Marcellus Mills"], ["year", 1915], ["genre", "horreur"], ["synopsis", "Vel eos tenetur sint explicabo cumque deserunt perspiciatis fugit itaque."], ["director", "Donnie Runolfsdottir"], ["allocine_rating", 3.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.158852"], ["updated_at", "2022-10-26 15:27:44.158852"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rigoberto O'Connell"], ["year", 1913], ["genre", "action"], ["synopsis", "Qui quos rerum quae laudantium sed soluta eum vel ut."], ["director", "Ulysses Crona"], ["allocine_rating", 2.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.166525"], ["updated_at", "2022-10-26 15:27:44.166525"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jerry Lakin"], ["year", 1988], ["genre", "comédie"], ["synopsis", "Minus quidem tempora quas quasi et non doloremque quae libero."], ["director", "Rima Walker"], ["allocine_rating", 0.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.174361"], ["updated_at", "2022-10-26 15:27:44.174361"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Inell Bogan"], ["year", 1998], ["genre", "horreur"], ["synopsis", "Aut voluptatibus ut a vel tempore qui qui tempora hic."], ["director", "Miss Amal Heller"], ["allocine_rating", 4.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.181981"], ["updated_at", "2022-10-26 15:27:44.181981"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Wyatt Rau"], ["year", 1910], ["genre", "comédie"], ["synopsis", "Distinctio magni suscipit eum praesentium id vero debitis soluta consequatur."], ["director", "Farah Schmeler"], ["allocine_rating", 0.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.189216"], ["updated_at", "2022-10-26 15:27:44.189216"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Roland Conroy Ret."], ["year", 2003], ["genre", "comédie"], ["synopsis", "Quia architecto repellat labore sunt eum consequatur quod iusto asperiores."], ["director", "Marco Oberbrunner"], ["allocine_rating", 2.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.196817"], ["updated_at", "2022-10-26 15:27:44.196817"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Leda Effertz"], ["year", 1994], ["genre", "action"], ["synopsis", "Vel quasi laborum rerum mollitia voluptates error velit adipisci autem."], ["director", "Wendie Tillman"], ["allocine_rating", 0.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.204505"], ["updated_at", "2022-10-26 15:27:44.204505"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Virgina Wuckert"], ["year", 1943], ["genre", "drame"], ["synopsis", "Sit ut corporis et odio non qui maiores labore in."], ["director", "German Dach"], ["allocine_rating", 1.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.212140"], ["updated_at", "2022-10-26 15:27:44.212140"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brandon Luettgen"], ["year", 2001], ["genre", "comédie"], ["synopsis", "Molestiae aut quisquam ipsum quam illum cum ex eaque natus."], ["director", "Lorine Macejkovic III"], ["allocine_rating", 0.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.219814"], ["updated_at", "2022-10-26 15:27:44.219814"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Margarete Cormier"], ["year", 1949], ["genre", "drame"], ["synopsis", "Sunt perferendis fugiat eum nesciunt velit vel et aspernatur harum."], ["director", "Debera Bahringer"], ["allocine_rating", 3.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.227263"], ["updated_at", "2022-10-26 15:27:44.227263"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larisa Bogan DVM"], ["year", 1928], ["genre", "drame"], ["synopsis", "Dicta atque ullam nobis adipisci delectus perspiciatis aut magnam accusantium."], ["director", "Jewel Tillman"], ["allocine_rating", 3.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.234980"], ["updated_at", "2022-10-26 15:27:44.234980"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aron Bins DVM"], ["year", 1926], ["genre", "action"], ["synopsis", "Modi soluta maiores quas doloremque doloribus ipsam nesciunt quo fuga."], ["director", "Stefani Herman DVM"], ["allocine_rating", 1.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.243307"], ["updated_at", "2022-10-26 15:27:44.243307"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Hon. Glenn Schultz"], ["year", 1994], ["genre", "drame"], ["synopsis", "Quo maiores et nihil placeat id hic ipsum sint animi."], ["director", "Sydney Schulist"], ["allocine_rating", 1.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.252186"], ["updated_at", "2022-10-26 15:27:44.252186"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Edgar Ratke II"], ["year", 1983], ["genre", "action"], ["synopsis", "Est qui maxime laboriosam provident neque quo aperiam deleniti blanditiis."], ["director", "Windy O'Keefe"], ["allocine_rating", 0.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.259751"], ["updated_at", "2022-10-26 15:27:44.259751"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kim Heller"], ["year", 1904], ["genre", "drame"], ["synopsis", "Repellendus consequatur sapiente sunt quod velit sed accusamus et quia."], ["director", "Shonta Schmitt"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.267471"], ["updated_at", "2022-10-26 15:27:44.267471"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rossie Stokes"], ["year", 1944], ["genre", "comédie"], ["synopsis", "Occaecati et perferendis dolore debitis provident consequuntur rerum voluptatem illum."], ["director", "Dawne Weimann"], ["allocine_rating", 4.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.275192"], ["updated_at", "2022-10-26 15:27:44.275192"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sha Buckridge MD"], ["year", 2006], ["genre", "horreur"], ["synopsis", "Quisquam vitae architecto consequatur laboriosam porro in adipisci quis omnis."], ["director", "Buddy Murphy DDS"], ["allocine_rating", 2.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.284172"], ["updated_at", "2022-10-26 15:27:44.284172"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "My Greenholt"], ["year", 1982], ["genre", "action"], ["synopsis", "Exercitationem quo quibusdam asperiores est velit facilis laboriosam sint accusamus."], ["director", "Elvira Hoeger"], ["allocine_rating", 3.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.291715"], ["updated_at", "2022-10-26 15:27:44.291715"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arthur Schaefer"], ["year", 1920], ["genre", "action"], ["synopsis", "Voluptates suscipit dicta fuga possimus illo officiis sed voluptatem voluptatibus."], ["director", "Andy Feeney"], ["allocine_rating", 0.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.300196"], ["updated_at", "2022-10-26 15:27:44.300196"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Stasia MacGyver"], ["year", 1990], ["genre", "drame"], ["synopsis", "Sint alias quisquam voluptas voluptate quas molestias et ullam autem."], ["director", "Bernard Pollich"], ["allocine_rating", 2.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.308563"], ["updated_at", "2022-10-26 15:27:44.308563"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Hon. Refugio Wehner"], ["year", 1968], ["genre", "horreur"], ["synopsis", "Eaque consequuntur ea qui praesentium aut et perferendis ab enim."], ["director", "August Blick"], ["allocine_rating", 4.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.316724"], ["updated_at", "2022-10-26 15:27:44.316724"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eleonor Crona"], ["year", 1965], ["genre", "drame"], ["synopsis", "Beatae odio magni ullam architecto error voluptatem maiores debitis nihil."], ["director", "Reuben Schamberger Ret."], ["allocine_rating", 1.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.326530"], ["updated_at", "2022-10-26 15:27:44.326530"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Amb. Garret Thompson"], ["year", 1953], ["genre", "comédie"], ["synopsis", "Fugit nemo itaque atque ex possimus dolor sit dolorem iusto."], ["director", "Sheldon Orn"], ["allocine_rating", 2.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.335033"], ["updated_at", "2022-10-26 15:27:44.335033"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.6ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Michael Morar"], ["year", 2017], ["genre", "action"], ["synopsis", "Quidem ut voluptatem doloribus eligendi in rerum laborum veniam esse."], ["director", "Cary Ankunding"], ["allocine_rating", 3.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.342524"], ["updated_at", "2022-10-26 15:27:44.342524"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eldon Farrell"], ["year", 2020], ["genre", "comédie"], ["synopsis", "Molestias accusantium maxime fuga quo dolor impedit illo ducimus eaque."], ["director", "Jeanetta Deckow"], ["allocine_rating", 2.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:27:44.352231"], ["updated_at", "2022-10-26 15:27:44.352231"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.6ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 21]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 22]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 23]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 24]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 25]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 26]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 27]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (2.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 28]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 29]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 30]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 31]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 32]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 33]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 34]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 35]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 36]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 37]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 38]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 39]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 40]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.6ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 41]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 42]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 43]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.6ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 44]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 45]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 46]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 47]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 48]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 49]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 50]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 51]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.6ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 52]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 53]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 54]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 55]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 56]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 57]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 58]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 59]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 60]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 61]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 62]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 63]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 64]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 65]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 66]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 67]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 68]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 69]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 70]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 71]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 72]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 73]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 74]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 75]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 76]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 77]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (2.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 78]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 79]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 80]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 81]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 82]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 83]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 84]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 85]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 86]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 87]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 88]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 89]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 90]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 91]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 92]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 93]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 94]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 95]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 96]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 97]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 98]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 99]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 100]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 101]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 102]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 103]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Intouchables"], ["year", 1995], ["genre", "comédie"], ["synopsis", "Voluptatum delectus velit ducimus ullam voluptas non a incidunt molestiae."], ["director", "Ellis Schmeler"], ["allocine_rating", 3.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.352566"], ["updated_at", "2022-10-26 15:30:48.352566"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode VII - The Force Awakens"], ["year", 1960], ["genre", "horreur"], ["synopsis", "Ratione nihil nam deserunt aut officia excepturi et enim dicta."], ["director", "Britt Denesik VM"], ["allocine_rating", 2.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.361011"], ["updated_at", "2022-10-26 15:30:48.361011"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vertigo"], ["year", 1949], ["genre", "horreur"], ["synopsis", "In vel voluptate praesentium ex eveniet non illo perferendis sit."], ["director", "Mazie Streich"], ["allocine_rating", 0.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.368431"], ["updated_at", "2022-10-26 15:30:48.368431"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Big Lebowski"], ["year", 1929], ["genre", "drame"], ["synopsis", "Sed eligendi hic est id voluptas ab impedit molestiae quibusdam."], ["director", "Prof. Setsuko Price"], ["allocine_rating", 1.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.375245"], ["updated_at", "2022-10-26 15:30:48.375245"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode IV – A New Hope"], ["year", 1979], ["genre", "drame"], ["synopsis", "Illum rem sint quaerat cumque quia non et qui quod."], ["director", "Andre Renner"], ["allocine_rating", 1.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.382460"], ["updated_at", "2022-10-26 15:30:48.382460"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lock, Stock and Two Smoking Barrels"], ["year", 1920], ["genre", "drame"], ["synopsis", "Eos corrupti similique necessitatibus commodi aut pariatur eaque aut qui."], ["director", "Jerrell Rutherford Jr."], ["allocine_rating", 0.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.389984"], ["updated_at", "2022-10-26 15:30:48.389984"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hotel Rwanda"], ["year", 1974], ["genre", "drame"], ["synopsis", "Aut optio est et perspiciatis mollitia est et eos nostrum."], ["director", "Elenor Heaney"], ["allocine_rating", 3.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.396830"], ["updated_at", "2022-10-26 15:30:48.396830"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A Beautiful Mind"], ["year", 1999], ["genre", "drame"], ["synopsis", "Optio voluptates accusamus autem modi eum illum quis aliquid sit."], ["director", "Tracey O'Hara DVM"], ["allocine_rating", 1.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.403629"], ["updated_at", "2022-10-26 15:30:48.403629"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Sixth Sense"], ["year", 1943], ["genre", "horreur"], ["synopsis", "Maxime qui sunt quia ut necessitatibus non quae voluptas quia."], ["director", "Holley Mertz"], ["allocine_rating", 4.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.410458"], ["updated_at", "2022-10-26 15:30:48.410458"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "All About Eve"], ["year", 2001], ["genre", "drame"], ["synopsis", "Velit qui facere labore commodi quia ducimus et alias qui."], ["director", "Reanna Murray II"], ["allocine_rating", 2.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.417671"], ["updated_at", "2022-10-26 15:30:48.417671"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Some Like It Hot"], ["year", 1969], ["genre", "drame"], ["synopsis", "Iusto sit perferendis soluta assumenda incidunt molestias dignissimos omnis dolorem."], ["director", "Junie Keeling"], ["allocine_rating", 4.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.425061"], ["updated_at", "2022-10-26 15:30:48.425061"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Third Man"], ["year", 1993], ["genre", "action"], ["synopsis", "Quis tempora maiores ea explicabo nulla eligendi voluptates quis est."], ["director", "Jeremiah Torphy"], ["allocine_rating", 0.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.431801"], ["updated_at", "2022-10-26 15:30:48.431801"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Elephant Man"], ["year", 1958], ["genre", "horreur"], ["synopsis", "Similique ducimus qui neque tenetur modi beatae suscipit debitis dolor."], ["director", "Skye Towne"], ["allocine_rating", 3.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.438801"], ["updated_at", "2022-10-26 15:30:48.438801"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode I – The Phantom Menace"], ["year", 1993], ["genre", "action"], ["synopsis", "Dolorem minus aut libero quod iste cum nemo dolores est."], ["director", "Pres. Colby Cummings"], ["allocine_rating", 1.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.445755"], ["updated_at", "2022-10-26 15:30:48.445755"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Network"], ["year", 2006], ["genre", "action"], ["synopsis", "Quibusdam velit voluptate dicta est nihil non magnam sit ex."], ["director", "Mrs. Doria Padberg"], ["allocine_rating", 1.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.452698"], ["updated_at", "2022-10-26 15:30:48.452698"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Citizen Kane"], ["year", 1981], ["genre", "horreur"], ["synopsis", "Optio voluptas libero qui quas qui sed soluta est necessitatibus."], ["director", "Fay Hintz"], ["allocine_rating", 3.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.459472"], ["updated_at", "2022-10-26 15:30:48.459472"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Groundhog Day"], ["year", 1921], ["genre", "horreur"], ["synopsis", "Dignissimos distinctio voluptatibus voluptas aspernatur aut dolorem in nesciunt nostrum."], ["director", "Elanor Windler"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.466501"], ["updated_at", "2022-10-26 15:30:48.466501"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Wizard of Oz"], ["year", 1974], ["genre", "action"], ["synopsis", "Et temporibus est praesentium fuga libero aut voluptatem quisquam consequatur."], ["director", "Ben Howell"], ["allocine_rating", 4.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.473139"], ["updated_at", "2022-10-26 15:30:48.473139"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dial M for Murder"], ["year", 1965], ["genre", "drame"], ["synopsis", "Veniam rem optio rerum est reprehenderit unde qui tenetur et."], ["director", "Dillon Schumm"], ["allocine_rating", 0.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.479975"], ["updated_at", "2022-10-26 15:30:48.479975"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mad Max: Fury Road"], ["year", 2019], ["genre", "drame"], ["synopsis", "Eligendi voluptatum ut ad sunt consequatur enim officiis dolor eos."], ["director", "Msgr. Reyna Deckow"], ["allocine_rating", 4.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.487108"], ["updated_at", "2022-10-26 15:30:48.487108"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gladiator"], ["year", 1966], ["genre", "drame"], ["synopsis", "Temporibus accusamus necessitatibus qui iure officia sapiente quos vero beatae."], ["director", "Prof. Judi Blanda"], ["allocine_rating", 0.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.494065"], ["updated_at", "2022-10-26 15:30:48.494065"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Sixth Sense"], ["year", 2001], ["genre", "comédie"], ["synopsis", "Tempora odio earum voluptas expedita impedit consequatur quidem ut dolore."], ["director", "Russell D'Amore"], ["allocine_rating", 4.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.501166"], ["updated_at", "2022-10-26 15:30:48.501166"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Persona"], ["year", 1908], ["genre", "horreur"], ["synopsis", "Voluptas amet laborum qui eum voluptatibus minus voluptate rem nulla."], ["director", "Nerissa Kirlin"], ["allocine_rating", 2.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.508461"], ["updated_at", "2022-10-26 15:30:48.508461"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode IV – A New Hope"], ["year", 1966], ["genre", "horreur"], ["synopsis", "Ratione alias aliquid voluptas rerum beatae culpa quia officiis quisquam."], ["director", "Tyree Ortiz"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.526634"], ["updated_at", "2022-10-26 15:30:48.526634"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Lord of the Rings: The Return of the King"], ["year", 1961], ["genre", "action"], ["synopsis", "Accusamus molestias recusandae magnam sequi assumenda ut dolores ipsum aliquam."], ["director", "Jackson McCullough"], ["allocine_rating", 1.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.533572"], ["updated_at", "2022-10-26 15:30:48.533572"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode VI - Return of the Jedi"], ["year", 1940], ["genre", "drame"], ["synopsis", "Minima veniam nostrum eaque nam voluptates dignissimos libero vel at."], ["director", "Foster Nitzsche"], ["allocine_rating", 2.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.540471"], ["updated_at", "2022-10-26 15:30:48.540471"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "2001: A Space Odyssey"], ["year", 2010], ["genre", "drame"], ["synopsis", "Ut qui illum velit facilis corrupti blanditiis ex enim eum."], ["director", "Gov. Edmundo Breitenberg"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.547496"], ["updated_at", "2022-10-26 15:30:48.547496"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Toy Story"], ["year", 1934], ["genre", "comédie"], ["synopsis", "Officia voluptatem voluptatum et qui sunt totam in id vel."], ["director", "Sen. Dolores McDermott"], ["allocine_rating", 3.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.554009"], ["updated_at", "2022-10-26 15:30:48.554009"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Treasure of the Sierra Madre"], ["year", 1971], ["genre", "drame"], ["synopsis", "Adipisci quidem laborum accusantium nulla nihil consequatur perferendis numquam ipsam."], ["director", "Trevor Thiel"], ["allocine_rating", 3.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.560822"], ["updated_at", "2022-10-26 15:30:48.560822"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Sting"], ["year", 2011], ["genre", "action"], ["synopsis", "Atque officiis recusandae similique quaerat inventore magnam quos fuga voluptatem."], ["director", "Noelia Bode"], ["allocine_rating", 1.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.567512"], ["updated_at", "2022-10-26 15:30:48.567512"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "North by Northwest"], ["year", 1903], ["genre", "drame"], ["synopsis", "Blanditiis praesentium cupiditate dolore est accusamus dolor aut libero cum."], ["director", "Cliff Schoen"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.574299"], ["updated_at", "2022-10-26 15:30:48.574299"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eternal Sunshine of the Spotless Mind"], ["year", 2005], ["genre", "drame"], ["synopsis", "Voluptate iste corporis fuga enim dolorem sequi ut itaque temporibus."], ["director", "Ms. Lon Harber"], ["allocine_rating", 1.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.581014"], ["updated_at", "2022-10-26 15:30:48.581014"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hotel Rwanda"], ["year", 1932], ["genre", "comédie"], ["synopsis", "Et natus laudantium tempore ut officiis ullam aut quia eos."], ["director", "Pres. Dierdre Bauch"], ["allocine_rating", 0.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.587739"], ["updated_at", "2022-10-26 15:30:48.587739"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "To Kill a Mockingbird"], ["year", 1908], ["genre", "horreur"], ["synopsis", "Et rem enim fuga omnis sint eum omnis eum earum."], ["director", "Christian Paucek"], ["allocine_rating", 1.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.594154"], ["updated_at", "2022-10-26 15:30:48.594154"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casino"], ["year", 1956], ["genre", "horreur"], ["synopsis", "Fuga velit porro veniam corporis rerum id quaerat quisquam molestiae."], ["director", "Gladis Thiel"], ["allocine_rating", 1.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.600803"], ["updated_at", "2022-10-26 15:30:48.600803"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pulp Fiction"], ["year", 1986], ["genre", "drame"], ["synopsis", "Corporis ut illum ad eaque perspiciatis ut aut sed nam."], ["director", "Jose Ledner"], ["allocine_rating", 2.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.607585"], ["updated_at", "2022-10-26 15:30:48.607585"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Truman Show"], ["year", 1968], ["genre", "action"], ["synopsis", "Facere vitae dolorem quasi ut magni dolores adipisci ut voluptates."], ["director", "Sen. Jess Homenick"], ["allocine_rating", 3.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.614367"], ["updated_at", "2022-10-26 15:30:48.614367"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Lord of the Rings: The Fellowship of the Ring"], ["year", 1994], ["genre", "comédie"], ["synopsis", "Dolor natus tempora corrupti quasi iure dicta vel ad error."], ["director", "Prof. Jeremy Lebsack"], ["allocine_rating", 1.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.621172"], ["updated_at", "2022-10-26 15:30:48.621172"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Shining"], ["year", 1928], ["genre", "horreur"], ["synopsis", "Saepe a officiis atque nulla quos non qui ipsum id."], ["director", "Courtney Ledner"], ["allocine_rating", 3.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.627854"], ["updated_at", "2022-10-26 15:30:48.627854"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Paths of Glory"], ["year", 1959], ["genre", "drame"], ["synopsis", "Omnis sed nihil tempore sint omnis deleniti nostrum exercitationem fugit."], ["director", "Rey Vandervort"], ["allocine_rating", 4.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.634736"], ["updated_at", "2022-10-26 15:30:48.634736"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "City of God"], ["year", 1961], ["genre", "drame"], ["synopsis", "Ex rerum odit iusto cumque iste officiis sit cum sapiente."], ["director", "Frances Kassulke"], ["allocine_rating", 4.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.643031"], ["updated_at", "2022-10-26 15:30:48.643031"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Network"], ["year", 1939], ["genre", "drame"], ["synopsis", "Est voluptas commodi occaecati ut ut quos omnis suscipit consectetur."], ["director", "Dong Morissette"], ["allocine_rating", 4.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.649786"], ["updated_at", "2022-10-26 15:30:48.649786"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Best Years of Our Lives"], ["year", 1902], ["genre", "action"], ["synopsis", "Rerum accusamus et repudiandae repellendus maiores dolorem tempore quis ut."], ["director", "Claudette Harris"], ["allocine_rating", 2.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.656668"], ["updated_at", "2022-10-26 15:30:48.656668"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jaws"], ["year", 1938], ["genre", "comédie"], ["synopsis", "Qui ut optio animi et consequuntur iure id autem est."], ["director", "Rosette Adams CPA"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.663605"], ["updated_at", "2022-10-26 15:30:48.663605"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Stand by Me"], ["year", 2001], ["genre", "horreur"], ["synopsis", "Explicabo qui aut libero aut esse magnam excepturi nisi omnis."], ["director", "Dr. Tamra Harris"], ["allocine_rating", 1.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.670068"], ["updated_at", "2022-10-26 15:30:48.670068"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Sixth Sense"], ["year", 1911], ["genre", "action"], ["synopsis", "Et molestiae et itaque exercitationem dolores dolore ullam nesciunt est."], ["director", "Rubin Mayert"], ["allocine_rating", 3.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.676890"], ["updated_at", "2022-10-26 15:30:48.676890"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "In the Name of the Father"], ["year", 1992], ["genre", "horreur"], ["synopsis", "Voluptatibus et temporibus et non quam blanditiis optio tempora omnis."], ["director", "Antony Spinka"], ["allocine_rating", 1.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.683606"], ["updated_at", "2022-10-26 15:30:48.683606"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Seven Samurai"], ["year", 1913], ["genre", "comédie"], ["synopsis", "Autem esse ipsa magnam ipsam ullam rem delectus possimus laboriosam."], ["director", "Cami Cronin"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.690117"], ["updated_at", "2022-10-26 15:30:48.690117"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Back to the Future"], ["year", 2008], ["genre", "comédie"], ["synopsis", "Et voluptate reprehenderit aspernatur facere nihil doloremque asperiores sint quo."], ["director", "Josie Beier IV"], ["allocine_rating", 0.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.696629"], ["updated_at", "2022-10-26 15:30:48.696629"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "12 Years a Slave"], ["year", 1911], ["genre", "drame"], ["synopsis", "Nihil totam et soluta corrupti omnis et pariatur esse dignissimos."], ["director", "Johnie Conn"], ["allocine_rating", 4.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.703207"], ["updated_at", "2022-10-26 15:30:48.703207"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Metropolis"], ["year", 1942], ["genre", "drame"], ["synopsis", "Doloribus assumenda illo corporis et similique asperiores nihil modi nobis."], ["director", "Eliseo McKenzie"], ["allocine_rating", 4.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.710510"], ["updated_at", "2022-10-26 15:30:48.710510"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Treasure of the Sierra Madre"], ["year", 1986], ["genre", "drame"], ["synopsis", "Illum perspiciatis rerum repellat cumque quia in ipsa reiciendis quasi."], ["director", "Carlos D'Amore"], ["allocine_rating", 3.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.717458"], ["updated_at", "2022-10-26 15:30:48.717458"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dunkirk"], ["year", 1986], ["genre", "horreur"], ["synopsis", "Odio adipisci voluptas sint cum velit impedit consequatur beatae accusantium."], ["director", "Terrie Carroll"], ["allocine_rating", 0.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.724528"], ["updated_at", "2022-10-26 15:30:48.724528"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Grave of the Fireflies"], ["year", 1986], ["genre", "comédie"], ["synopsis", "Eius porro sunt animi optio numquam aut quam cum vel."], ["director", "Bo Walker"], ["allocine_rating", 0.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.731662"], ["updated_at", "2022-10-26 15:30:48.731662"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fight Club"], ["year", 1903], ["genre", "drame"], ["synopsis", "Et tempora labore in atque architecto ut consequatur qui qui."], ["director", "Gregoria Carter II"], ["allocine_rating", 1.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.738666"], ["updated_at", "2022-10-26 15:30:48.738666"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casino"], ["year", 1985], ["genre", "horreur"], ["synopsis", "Ex qui placeat quo sunt dolor labore in et nemo."], ["director", "Adan Bernier"], ["allocine_rating", 4.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.745435"], ["updated_at", "2022-10-26 15:30:48.745435"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "2001: A Space Odyssey"], ["year", 2001], ["genre", "horreur"], ["synopsis", "Voluptatem consequatur dolore a reprehenderit eaque nulla est quasi perspiciatis."], ["director", "Emanuel Wiegand DVM"], ["allocine_rating", 3.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.752212"], ["updated_at", "2022-10-26 15:30:48.752212"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode II – Attack of the Clones"], ["year", 1930], ["genre", "drame"], ["synopsis", "Et enim distinctio qui ducimus aut in fugiat perspiciatis eum."], ["director", "Ms. Marcellus Boyle"], ["allocine_rating", 2.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.762616"], ["updated_at", "2022-10-26 15:30:48.762616"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Inglourious Basterds"], ["year", 1943], ["genre", "action"], ["synopsis", "Eum ut ut dolorem esse iste ullam et qui libero."], ["director", "Prof. Tyrone Raynor"], ["allocine_rating", 2.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.770902"], ["updated_at", "2022-10-26 15:30:48.770902"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Million Dollar Baby"], ["year", 1991], ["genre", "horreur"], ["synopsis", "Impedit voluptas qui odit aut deleniti qui mollitia rem et."], ["director", "Migdalia Thompson"], ["allocine_rating", 1.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.778546"], ["updated_at", "2022-10-26 15:30:48.778546"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Bourne Ultimatum"], ["year", 1912], ["genre", "comédie"], ["synopsis", "Sint impedit blanditiis id quis dolor quo et quia sint."], ["director", "Kevin Stehr"], ["allocine_rating", 0.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.786018"], ["updated_at", "2022-10-26 15:30:48.786018"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode IX – The Rise of Skywalker"], ["year", 1920], ["genre", "horreur"], ["synopsis", "Similique laborum autem et est eligendi unde enim eum ut."], ["director", "Nelly Cormier"], ["allocine_rating", 4.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.794117"], ["updated_at", "2022-10-26 15:30:48.794117"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Stalker"], ["year", 1935], ["genre", "horreur"], ["synopsis", "Illum exercitationem voluptatem velit voluptas sint quidem dolor non quasi."], ["director", "Ambrose Spencer"], ["allocine_rating", 4.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.802036"], ["updated_at", "2022-10-26 15:30:48.802036"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Lord of the Rings: The Return of the King"], ["year", 1935], ["genre", "horreur"], ["synopsis", "Illum dolorum reprehenderit nihil cumque iusto dolore repellendus sapiente minima."], ["director", "Wilfred Ullrich"], ["allocine_rating", 0.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.810293"], ["updated_at", "2022-10-26 15:30:48.810293"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Interstellar"], ["year", 1998], ["genre", "horreur"], ["synopsis", "Molestiae excepturi ut et quia dolorem et laudantium nulla voluptas."], ["director", "Laquita Bechtelar II"], ["allocine_rating", 2.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.818544"], ["updated_at", "2022-10-26 15:30:48.818544"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Some Like It Hot"], ["year", 1957], ["genre", "comédie"], ["synopsis", "Debitis reiciendis iusto quasi itaque mollitia aut est vel nam."], ["director", "Greg Grady"], ["allocine_rating", 3.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.826401"], ["updated_at", "2022-10-26 15:30:48.826401"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Braveheart"], ["year", 2017], ["genre", "action"], ["synopsis", "Sit quis tenetur non et quas non aspernatur ut omnis."], ["director", "Shoshana Mitchell"], ["allocine_rating", 0.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.834334"], ["updated_at", "2022-10-26 15:30:48.834334"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rocky"], ["year", 1936], ["genre", "drame"], ["synopsis", "Est qui magnam quia eligendi tempore tempora recusandae est optio."], ["director", "Shayne Bartell"], ["allocine_rating", 4.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.842059"], ["updated_at", "2022-10-26 15:30:48.842059"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rush"], ["year", 1969], ["genre", "horreur"], ["synopsis", "Et accusantium nemo cum id vero velit vel consectetur rem."], ["director", "Loyce Stark"], ["allocine_rating", 0.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.850053"], ["updated_at", "2022-10-26 15:30:48.850053"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Green Mile"], ["year", 1923], ["genre", "comédie"], ["synopsis", "Quaerat dicta voluptas ad sit blanditiis omnis non unde repudiandae."], ["director", "Archie Kub Jr."], ["allocine_rating", 2.7], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.857227"], ["updated_at", "2022-10-26 15:30:48.857227"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode V - The Empire Strikes Back"], ["year", 1925], ["genre", "action"], ["synopsis", "Ab aliquid eaque qui voluptatum ea a quia fugit unde."], ["director", "Cliff Hintz PhD"], ["allocine_rating", 3.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.866276"], ["updated_at", "2022-10-26 15:30:48.866276"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Braveheart"], ["year", 1915], ["genre", "action"], ["synopsis", "Ea mollitia eligendi ut pariatur quo repudiandae et a cupiditate."], ["director", "Jacque Torp"], ["allocine_rating", 0.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.873901"], ["updated_at", "2022-10-26 15:30:48.873901"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blade Runner 2049"], ["year", 1974], ["genre", "action"], ["synopsis", "Et reiciendis laudantium ipsa iste quibusdam sed cum qui et."], ["director", "Otha Spinka"], ["allocine_rating", 3.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.881487"], ["updated_at", "2022-10-26 15:30:48.881487"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Big Lebowski"], ["year", 2020], ["genre", "comédie"], ["synopsis", "Rerum laboriosam asperiores a magni aut odit accusantium praesentium numquam."], ["director", "Anya Kihn"], ["allocine_rating", 4.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.889328"], ["updated_at", "2022-10-26 15:30:48.889328"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nuovo Cinema Paradiso"], ["year", 1904], ["genre", "action"], ["synopsis", "Molestiae velit facere aut minus voluptates vel impedit magni laudantium."], ["director", "Kurtis Heller"], ["allocine_rating", 2.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.898390"], ["updated_at", "2022-10-26 15:30:48.898390"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vertigo"], ["year", 1935], ["genre", "comédie"], ["synopsis", "Eum labore quo ex ullam consequatur distinctio non illo tempora."], ["director", "Enoch Schinner MD"], ["allocine_rating", 0.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.906982"], ["updated_at", "2022-10-26 15:30:48.906982"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beauty and the Beast"], ["year", 1966], ["genre", "comédie"], ["synopsis", "Aut sunt doloremque dolorem quos non ut rerum sit consequatur."], ["director", "Darcie Balistreri"], ["allocine_rating", 0.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.915629"], ["updated_at", "2022-10-26 15:30:48.915629"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "12 Years a Slave"], ["year", 1954], ["genre", "horreur"], ["synopsis", "Reiciendis iste ducimus quos aliquam et dolor consectetur voluptas aut."], ["director", "Rosaura Harvey LLD"], ["allocine_rating", 1.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.924933"], ["updated_at", "2022-10-26 15:30:48.924933"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Star Wars: Episode II – Attack of the Clones"], ["year", 1951], ["genre", "horreur"], ["synopsis", "Tempora illo dignissimos ipsum molestias dolorum molestiae est necessitatibus sit."], ["director", "Samira Kuhlman"], ["allocine_rating", 3.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.933843"], ["updated_at", "2022-10-26 15:30:48.933843"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Lord of the Rings: The Return of the King"], ["year", 1965], ["genre", "drame"], ["synopsis", "Veniam aut eos maxime mollitia amet autem est sint expedita."], ["director", "Dorsey Hand"], ["allocine_rating", 1.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.941414"], ["updated_at", "2022-10-26 15:30:48.941414"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Lion King"], ["year", 1905], ["genre", "drame"], ["synopsis", "Ut sunt ut ullam sit magni facilis explicabo tempore rem."], ["director", "Merlin Ullrich"], ["allocine_rating", 4.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.949046"], ["updated_at", "2022-10-26 15:30:48.949046"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Paper Moon"], ["year", 1903], ["genre", "action"], ["synopsis", "Sit quibusdam nihil ullam unde sed consectetur quis reiciendis delectus."], ["director", "Stan Kunze"], ["allocine_rating", 4.8], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.957129"], ["updated_at", "2022-10-26 15:30:48.957129"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Best Years of Our Lives"], ["year", 1977], ["genre", "horreur"], ["synopsis", "Consequatur beatae quia doloribus molestiae enim culpa in dolorum aspernatur."], ["director", "Ignacia Ledner"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.965755"], ["updated_at", "2022-10-26 15:30:48.965755"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.8ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Green Mile"], ["year", 2012], ["genre", "action"], ["synopsis", "Molestias voluptates mollitia ut natus et ducimus sed quasi qui."], ["director", "Tena Greenfelder"], ["allocine_rating", 4.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.973517"], ["updated_at", "2022-10-26 15:30:48.973517"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beauty and the Beast"], ["year", 2003], ["genre", "action"], ["synopsis", "Accusamus repudiandae omnis autem dolorem et mollitia consequatur beatae qui."], ["director", "Ozella Johnston"], ["allocine_rating", 2.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.985031"], ["updated_at", "2022-10-26 15:30:48.985031"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.6ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jurassic Park"], ["year", 1985], ["genre", "drame"], ["synopsis", "Voluptatum et adipisci dolorem aut velit tempora consequatur fuga perspiciatis."], ["director", "Sheldon Gerlach"], ["allocine_rating", 4.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:48.993908"], ["updated_at", "2022-10-26 15:30:48.993908"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.7ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Stalker"], ["year", 1980], ["genre", "comédie"], ["synopsis", "Qui perspiciatis inventore quis dolorem a odio sint iste et."], ["director", "Morris Larkin MD"], ["allocine_rating", 3.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.002479"], ["updated_at", "2022-10-26 15:30:49.002479"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "L.A. Confidential"], ["year", 1995], ["genre", "drame"], ["synopsis", "Incidunt mollitia voluptatum consectetur modi assumenda nisi qui repudiandae reprehenderit."], ["director", "Amb. Alden Reynolds"], ["allocine_rating", 1.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.011445"], ["updated_at", "2022-10-26 15:30:49.011445"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Toy Story"], ["year", 2012], ["genre", "action"], ["synopsis", "In aut reiciendis tempora ut odit deserunt quasi nam et."], ["director", "Milan Abshire"], ["allocine_rating", 3.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.020292"], ["updated_at", "2022-10-26 15:30:49.020292"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Million Dollar Baby"], ["year", 1961], ["genre", "horreur"], ["synopsis", "Temporibus assumenda quis porro voluptas eum labore id eius quis."], ["director", "Les Schmeler"], ["allocine_rating", 0.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.028172"], ["updated_at", "2022-10-26 15:30:49.028172"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casablanca"], ["year", 1904], ["genre", "action"], ["synopsis", "Sit expedita ea enim quibusdam aliquid quia et qui ut."], ["director", "Xuan Nitzsche"], ["allocine_rating", 2.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.039134"], ["updated_at", "2022-10-26 15:30:49.039134"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dunkirk"], ["year", 1965], ["genre", "action"], ["synopsis", "Expedita ducimus architecto rerum quia ut cum autem a quo."], ["director", "Shera Adams"], ["allocine_rating", 4.2], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.046822"], ["updated_at", "2022-10-26 15:30:49.046822"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sholay"], ["year", 1915], ["genre", "drame"], ["synopsis", "Rerum facilis iste culpa nihil amet quia similique ipsa laborum."], ["director", "Jamey DuBuque"], ["allocine_rating", 4.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.054981"], ["updated_at", "2022-10-26 15:30:49.054981"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "WALL·E"], ["year", 1935], ["genre", "drame"], ["synopsis", "Ipsum nobis qui repellendus in minus sequi laboriosam est porro."], ["director", "Bev Sipes"], ["allocine_rating", 4.4], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.062279"], ["updated_at", "2022-10-26 15:30:49.062279"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Catch Me If You Can"], ["year", 1983], ["genre", "action"], ["synopsis", "Accusantium rem est eum porro et illo vel odit totam."], ["director", "Eugenia Davis"], ["allocine_rating", 4.0], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.070033"], ["updated_at", "2022-10-26 15:30:49.070033"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Godfather: Part II"], ["year", 1959], ["genre", "horreur"], ["synopsis", "Aut qui dolor quasi ratione architecto vero voluptas asperiores aperiam."], ["director", "Louis Daugherty"], ["allocine_rating", 0.9], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.077762"], ["updated_at", "2022-10-26 15:30:49.077762"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alien"], ["year", 1971], ["genre", "drame"], ["synopsis", "Exercitationem reiciendis expedita non officiis error laudantium et pariatur aut."], ["director", "Timmy Hayes"], ["allocine_rating", 0.6], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.085511"], ["updated_at", "2022-10-26 15:30:49.085511"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Elephant Man"], ["year", 1972], ["genre", "action"], ["synopsis", "Est ut qui provident sed ducimus ad quo rerum commodi."], ["director", "Ellis Johnston II"], ["allocine_rating", 1.1], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.093053"], ["updated_at", "2022-10-26 15:30:49.093053"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nuovo Cinema Paradiso"], ["year", 1999], ["genre", "comédie"], ["synopsis", "Rerum velit voluptatem mollitia qui cumque sed sed totam doloribus."], ["director", "Hyman Gusikowski"], ["allocine_rating", 4.3], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.101102"], ["updated_at", "2022-10-26 15:30:49.101102"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("name", "year", "genre", "synopsis", "director", "allocine_rating", "my_rating", "already_seen", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sunrise: A Song of Two Humans"], ["year", 1960], ["genre", "action"], ["synopsis", "Fugiat magnam quam architecto sit et adipisci consequatur eaque quisquam."], ["director", "Raymundo Reichel Ret."], ["allocine_rating", 4.5], ["my_rating", nil], ["already_seen", 0], ["created_at", "2022-10-26 15:30:49.109228"], ["updated_at", "2022-10-26 15:30:49.109228"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" BETWEEN ? AND ? LIMIT ?[0m  [["id", 104], ["id", 113], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" BETWEEN ? AND ?[0m  [["id", 104], ["id", 113]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.7ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.693135"], ["id", 104]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.2ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.704300"], ["id", 105]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.3ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.710234"], ["id", 106]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.719750"], ["id", 107]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.733493"], ["id", 108]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.0ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.739384"], ["id", 109]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.745920"], ["id", 110]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.751847"], ["id", 111]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.0ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.757398"], ["id", 112]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "already_seen" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["already_seen", 1], ["updated_at", "2022-10-26 15:47:43.762915"], ["id", 113]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.3ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.873619"], ["id", 104]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.6ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.879509"], ["id", 105]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (2.8ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.892855"], ["id", 106]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.905875"], ["id", 107]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.7ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.915949"], ["id", 108]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.2ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.928494"], ["id", 109]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.0ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.938345"], ["id", 110]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.3ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.946045"], ["id", 111]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.1ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.958479"], ["id", 112]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Update (1.0ms)[0m  [1m[33mUPDATE "movies" SET "my_rating" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["my_rating", 3], ["updated_at", "2022-10-26 15:48:32.968714"], ["id", 113]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
